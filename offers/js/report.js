@@ -36,9 +36,10 @@ function getD(){
                        var paytype = change.doc.data().py;
                         var phone = change.doc.data().ph;
                        var email = change.doc.data().em;
+                       var transref = change.doc.data().tr;
                       
     var $row = $('<tr></tr>').appendTo('#orderbody');
-         $('<td></td>').appendTo($row).append($('<div style="background-color:#ceeaf5; padding:10px;">Name:<span style="padding-right:10px;"><b>'+name+'</b></span>Address:<span style="padding-right:10px;"><b>'+address+'</b></span>Bus Stop: <span style="padding-right:10px;"><b>'+busstop+'</b></span>Phone: <span style="padding-right:10px;"><b>'+phone+'</b></span style="padding-right:10px;">Email: <span style="padding-right:10px;"><b>'+email+'</b></span>Qty: <span style="padding-right:10px;"><b>'+qty+'</b></span>Amount: <span style="padding-right:10px;"><b>'+amount+'</b></span> Pay method: <span style="padding-right:10px;"><b>'+paytype+'</b></span>Order time: <span style="padding-right:10px;"><b>'+time+'</b></span></div>'));
+         $('<td></td>').appendTo($row).append($('<div style="background-color:#ceeaf5; padding:10px;">Name:<span style="padding-right:10px;"><b>'+name+'</b></span>Address:<span style="padding-right:10px;"><b>'+address+'</b></span>Bus Stop: <span style="padding-right:10px;"><b>'+busstop+'</b></span>Phone: <span style="padding-right:10px;"><b>'+phone+'</b></span style="padding-right:10px;">Email: <span style="padding-right:10px;"><b>'+email+'</b></span>Qty: <span style="padding-right:10px;"><b>'+qty+'</b></span>Amount: <span style="padding-right:10px;"><b>'+amount+'</b></span> Pay method: <span style="padding-right:10px;"><b>'+paytype+'</b></span>Order time: <span style="padding-right:10px;"><b>'+time+'</b></span>Ref: <span style="padding-right:10px;"><b>'+transref+'</b></span></div>'));
            
             }
             if (change.type === "modified") {
