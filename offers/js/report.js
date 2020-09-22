@@ -57,13 +57,18 @@ function getD(){
 }
     });
     //get total
-    db.collection("hstotal").get().then(snap => {
-    snap.forEach(doc => {
- 
-     var amount = doc.data().tl;
-     $("#tot").text("N"+amount);
-            });
+     db.collection("hstotal").onSnapshot(function(snapshot) {
+        
+         snapshot.docChanges().forEach(function(change) {
+
+            if (change.type === "added") {
+    
+      var amount = change.doc.data().tl;
+       $("#tot").text("N"+amount);
+            }
          });
+    });
+   
     
  }
  
