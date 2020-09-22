@@ -252,17 +252,36 @@ db2.collection("hstotal").get().then(snap => {
                 metaname: "flightID",
                 metavalue: "AP1234"
             }],
-            onclose: function() {},
+            onclose: function() {
+                
+               db2.collection("hstotal").get().then(snap => {
+    snap.forEach(doc => {
+    //    console.log(doc.data());
+    var oldvalue = doc.data().tl;
+        //add this one to it
+        var newvalue = oldvalue - total;
+        //save new value
+        var data = { tl: newvalue};
+        console.log(newvalue);
+        var id="4SxSrCNFKO1RfW2sJhpM";
+        db.collection("hstotal").doc(id).set(data).then(function(){
+            console.log("new total updated"); 
+        });
+    });
+               });
+               },
             callback: function(response) {
                 var txref = response.data.txRef; // collect txRef returned and pass to a                    server page to complete status check.
                 if(txref){
                     var transref = txref;
                     
                 } else {
-                   var transref = "0"; 
+                   var transref = "0";
                 }
                 
                 //save transaction ref
+                
+              console.log(total);
                 const db = firebase.firestore();
     db.collection("orders").doc(id).set({tr:transref}, {merge:true}).then(function(){
         console.log("tx saved");
