@@ -257,6 +257,7 @@ db2.collection("hstotal").get().then(snap => {
                 var txref = response.data.txRef; // collect txRef returned and pass to a                    server page to complete status check.
                 if(txref){
                     var transref = txref;
+                    
                 } else {
                    var transref = "0"; 
                 }
