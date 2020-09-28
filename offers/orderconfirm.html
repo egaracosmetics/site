@@ -30,7 +30,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '280431553029199');
-fbq('track', 'PageView');
+  fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=280431553029199&ev=PageView&noscript=1"
@@ -39,8 +39,11 @@ src="https://www.facebook.com/tr?id=280431553029199&ev=PageView&noscript=1"
         
 </head>
 <body>
-  <script>
-  fbq('track', 'Purchase');
+ <script>
+  fbq('track', 'Purchase', {
+    value: 4000,
+    currency: 'NGN',
+  });
 </script>
     <!-- Insert your content here -->
     <div class="container-fluid" style="background-color: #b07610;">
